@@ -12,17 +12,18 @@ data class Page (
 val pages = listOf(
     Page(
         title = "Welcome to NewsApp",
-        description = "This app provides you with the latest news from around the world.",
-        image = R.drawable.onboarding1
+        description = "Your go-to source for breaking news, personalized content, and in-depth stories",
+        image = R.drawable.onboarding6
     ),
     Page(
-        title = "Get the latest news",
-        description = "NewsApp provides you with the latest news from around the world.",
-        image = R.drawable.onboarding2
+        title = "Your News, Your Way",
+        description = " Select your favorite topics and sources to create a personalized news " +
+                "feed that reflects your interests and preferences.",
+        image = R.drawable.onboarding7
     ),
     Page(
-        title = "Save your favorite news",
-        description = "NewsApp allows you to save your favorite news.",
-        image = R.drawable.onboarding3
+        title = "Stay Ahead with Instant Updates",
+        description = "Enable push notifications to receive breaking news alerts in real-time.",
+        image = R.drawable.onboarding8
     )
 )
