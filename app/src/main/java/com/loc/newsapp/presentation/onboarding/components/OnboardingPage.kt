@@ -48,7 +48,7 @@ fun OnboardingPage(
         Text(
             text = page.description,
             modifier = Modifier.padding(horizontal = MediumPadding2),
-            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+            style = MaterialTheme.typography.bodyMedium,
             color = colorResource(id = R.color.text_medium)
         )
     }
