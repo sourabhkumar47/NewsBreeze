@@ -24,6 +24,6 @@ val pages = listOf(
     Page(
         title = "Stay Ahead with Instant Updates",
         description = "Enable push notifications to receive breaking news alerts in real-time.",
-        image = R.drawable.onboarding8
+        image = R.drawable.onboarding8_
     )
 )
