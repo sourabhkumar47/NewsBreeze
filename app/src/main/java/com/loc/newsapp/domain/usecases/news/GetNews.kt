@@ -1,4 +1,4 @@
-package com.loc.newsapp.domain.manager.usecases.news
+package com.loc.newsapp.domain.usecases.news
 
 import androidx.paging.PagingData
 import com.loc.newsapp.domain.model.Article
