@@ -1,8 +1,8 @@
-# NewsBuzz Android App
+# NewsBreeze Android App
 
 ## Project Description
 
-NewsBuzz is a dynamic and user-friendly news application developed for the Android platform using Kotlin and Jetpack Compose. It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
+NewsBreeze is a dynamic and user-friendly news application developed for the Android platform using Kotlin and Jetpack Compose. It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
 
 ## Tech Stack Used
 
@@ -35,13 +35,13 @@ NewsBuzz is a dynamic and user-friendly news application developed for the Andro
 
 ## How to Contribute
 
-We welcome contributions to enhance and improve NewsBuzz. If you're interested in contributing, here's how you can get started:
+We welcome contributions to enhance and improve NewsBreeze. If you're interested in contributing, here's how you can get started:
 
-1. **Fork the Repository:** Start by forking the NewsBuzz repository to your own GitHub account.
+1. **Fork the Repository:** Start by forking the NewsBreeze repository to your own GitHub account.
 
 2. **Clone the Repository:** Clone the forked repository to your local machine using the following command:
    ```
-   git clone https://github.com/your-username/NewsBuzz.git
+   git clone https://github.com/your-username/NewsBreeze.git
    ```
 
 3. **Create a Branch:** Create a new branch for your contributions.
@@ -65,6 +65,6 @@ We welcome contributions to enhance and improve NewsBuzz. If you're interested i
 
 ## Code of Conduct
 
-Please note that NewsBuzz follows a [Code of Conduct](link-to-code-of-conduct) to ensure a positive and inclusive community. Make sure to adhere to it in all interactions.
+Please note that NewsBreeze follows a [Code of Conduct](link-to-code-of-conduct) to ensure a positive and inclusive community. Make sure to adhere to it in all interactions.
 
 Feel free to reach out if you have any questions or need assistance. Happy contributing!
