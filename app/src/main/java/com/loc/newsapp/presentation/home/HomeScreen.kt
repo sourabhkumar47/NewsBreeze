@@ -27,6 +27,7 @@ import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.presentation.common.ArticlesList
 import com.loc.newsapp.presentation.common.SearchBar
 import com.loc.newsapp.presentation.nvgraph.Route
+import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding0
 import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding1
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -48,23 +49,23 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = MediumPadding1)
+            .padding(top = MediumPadding0)
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_logo),
+            painter = painterResource(id = R.drawable.news_breeze_logos___copy),
             contentDescription = null,
             modifier = Modifier
-                .width(150.dp)
-                .height(30.dp)
-                .padding(horizontal = MediumPadding1)
+                .width(200.dp)
+                .height(60.dp)
+                .padding(horizontal = MediumPadding0)
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding0))
 
         SearchBar(
             modifier = Modifier
-                .padding(horizontal = MediumPadding1)
+                .padding(horizontal = MediumPadding0)
                 .fillMaxWidth(),
             text = "",
             readOnly = true,
@@ -80,15 +81,15 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate:(String) -> Unit) {
         Text(
             text = titles, modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = MediumPadding1)
+//                .padding(start = MediumPadding0)
                 .basicMarquee(), fontSize = 12.sp,
             color = colorResource(id = R.color.placeholder)
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding0))
 
         ArticlesList(
-            modifier = Modifier.padding(horizontal = MediumPadding1),
+            modifier = Modifier.padding(horizontal = MediumPadding0),
             articles = articles,
             onClick = {
                 //TODO: Navigate to Details Screen
