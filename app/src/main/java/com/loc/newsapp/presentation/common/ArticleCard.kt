@@ -38,11 +38,11 @@ import com.loc.newsapp.presentation.onboarding.Dimens.SmallIconSize
 fun ArticleCard(
     modifier: Modifier = Modifier,
     article: Article,
-    onClick: () -> Unit
+    onClick: (() -> Unit)? = null
 ) {
     val context = LocalContext.current
 
-    Row(modifier = modifier.clickable { onClick() }) {
+    Row(modifier = modifier.clickable { onClick?.invoke() }) {
 
         AsyncImage(
             modifier = Modifier
@@ -61,7 +61,7 @@ fun ArticleCard(
         ) {
             Text(
                 text = article.title,
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodyMedium.copy(),
                 color = colorResource(
                     id = R.color.text_title
                 ),
