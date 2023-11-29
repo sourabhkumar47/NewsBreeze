@@ -1,7 +1,5 @@
 # NewsBreeze Android App
 
-## Project Description
-
 NewsBreeze is a dynamic and user-friendly news application developed for the Android platform using Kotlin and Jetpack Compose. It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
 
 ## Tech Stack Used
@@ -10,10 +8,9 @@ NewsBreeze is a dynamic and user-friendly news application developed for the And
 - **UI Toolkit:** Jetpack Compose
 - **Data Retrieval:** Retrofit
 - **Local Database:** Room
-- **Dependency Injection:** Dagger or Hilt (mention the one used)
+- **Dependency Injection:** Dagger or Hilt
 - **Design Language:** Material Design principles
 - **API:** Newsapi.org
-- **Version Control:** Git and GitHub
 
 
 [//]: # (# Preview )
