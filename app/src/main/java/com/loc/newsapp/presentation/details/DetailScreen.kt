@@ -1,7 +1,6 @@
 package com.loc.newsapp.presentation.details
 
 import android.content.Intent
-import android.media.ImageReader
 import android.net.Uri
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
