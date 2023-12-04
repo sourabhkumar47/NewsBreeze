@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.loc.newsapp.domain.model.Article
 import kotlinx.coroutines.flow.Flow
+import java.net.URL
 
 @Dao
 interface NewsDao {
@@ -19,4 +20,8 @@ interface NewsDao {
 
     @Query("SELECT * FROM Article")
     fun getArticle(): Flow<List<Article>>
+
+    @Query("SELECT * FROM Article WHERE url=:url")
+    suspend fun getArticle(url: String): Article?
+
 }
