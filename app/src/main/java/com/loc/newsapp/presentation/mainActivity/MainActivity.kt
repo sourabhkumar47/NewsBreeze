@@ -21,8 +21,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-//    @Inject
-//    lateinit var useCases: AppEntryUseCases
 
     private val viewModel by viewModels<MainViewModel>()
 
@@ -40,7 +38,7 @@ class MainActivity : ComponentActivity() {
 //        }
 
         setContent {
-            NewsAppTheme {
+            NewsAppTheme(dynamicColor = false) {
 
                 val isSystemInDarkMode = isSystemInDarkTheme()
                 val systemController = rememberSystemUiController()
@@ -55,10 +53,9 @@ class MainActivity : ComponentActivity() {
 
                 Box(
                     modifier = Modifier
-                        .background(color = MaterialTheme.colorScheme.background)
+                        .background(MaterialTheme.colorScheme.background)
                         .fillMaxSize()
                 ) {
-//                    val startDestination = viewModel.startDestination
                     NavGraph(startDestination = viewModel.startDestination.value)
                 }
             }
