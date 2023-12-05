@@ -27,6 +27,7 @@ import com.loc.newsapp.domain.model.Article
 import com.loc.newsapp.presentation.common.ArticlesList
 import com.loc.newsapp.presentation.common.SearchBar
 import com.loc.newsapp.presentation.nvgraph.Route
+import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding
 import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding0
 import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding1
 
@@ -57,15 +58,15 @@ fun HomeScreen(
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.news_breeze_logos___copy),
+            painter = painterResource(id = R.drawable.logo),
             contentDescription = null,
             modifier = Modifier
                 .width(200.dp)
-                .height(60.dp)
-                .padding(horizontal = MediumPadding0)
+                .height(80.dp)
+//                .padding(horizontal = MediumPadding0)
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding0))
+        Spacer(modifier = Modifier.height(MediumPadding))
 
         SearchBar(
             modifier = Modifier
@@ -80,15 +81,15 @@ fun HomeScreen(
             }
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding1))
+        Spacer(modifier = Modifier.height(MediumPadding))
 
-        Text(
-            text = titles, modifier = Modifier
-                .fillMaxWidth()
-//                .padding(start = MediumPadding0)
-                .basicMarquee(), fontSize = 12.sp,
-            color = colorResource(id = R.color.placeholder)
-        )
+//        Text(
+//            text = titles, modifier = Modifier
+//                .fillMaxWidth()
+////                .padding(start = MediumPadding0)
+//                .basicMarquee(), fontSize = 12.sp,
+//            color = colorResource(id = R.color.placeholder)
+//        )
 
         Spacer(modifier = Modifier.height(MediumPadding0))
 
