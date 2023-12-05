@@ -58,12 +58,12 @@ fun HomeScreen(
             .statusBarsPadding()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.logo),
+            painter = painterResource(id = R.drawable.logo_modified),
             contentDescription = null,
             modifier = Modifier
                 .width(200.dp)
                 .height(80.dp)
-//                .padding(horizontal = MediumPadding0)
+                .padding(horizontal = MediumPadding0)
         )
 
         Spacer(modifier = Modifier.height(MediumPadding))
