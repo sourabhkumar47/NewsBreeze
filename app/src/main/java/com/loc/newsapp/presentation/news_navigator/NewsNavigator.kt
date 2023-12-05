@@ -1,13 +1,13 @@
 package com.loc.newsapp.presentation.news_navigator
 
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -78,17 +78,17 @@ fun NewsNavigator() {
                     selected = selectedItem,
                     onItemClicked = { index ->
                         when (index) {
-                            0 -> navigateToTop(
+                            0 -> navigateToTab(
                                 navController = navController,
                                 route = Route.HomeScreen.route
                             )
 
-                            1 -> navigateToTop(
+                            1 -> navigateToTab(
                                 navController = navController,
                                 route = Route.SearchScreen.route
                             )
 
-                            2 -> navigateToTop(
+                            2 -> navigateToTab(
                                 navController = navController,
                                 route = Route.BookmarkScreen.route
                             )
@@ -111,7 +111,7 @@ fun NewsNavigator() {
 
                 HomeScreen(articles = article,
                     navigateToSearch = {
-                        navigateToTop(
+                        navigateToTab(
                             navController = navController,
                             route = Route.SearchScreen.route
                         )
@@ -128,6 +128,7 @@ fun NewsNavigator() {
             composable(route = Route.SearchScreen.route) {
                 val viewModel: SearchViewModel = hiltViewModel()
                 val state = viewModel.state.value
+                OnBackClickStateSaver(navController = navController)
 
                 SearchScreen(
                     state = state,
@@ -157,27 +158,40 @@ fun NewsNavigator() {
                         DetailsScreen(
                             article = article,
                             event = viewModel::onEvent,
-                            navigateUp = { navController.navigateUp() })
+                            navigateUp = { navController.navigateUp() }
+                        )
                     }
             }
 
             composable(route = Route.BookmarkScreen.route) {
                 val viewModel: BookmarkViewModel = hiltViewModel()
                 val state = viewModel.state.value
-
-                BookmarkScreen(state = state, navigateToDetails = { article ->
-                    navigateToDetails(
-                        navController = navController,
-                        article = article
-                    )
-                })
+                OnBackClickStateSaver(navController = navController)
+                BookmarkScreen(
+                    state = state,
+                    navigateToDetails = { article ->
+                        navigateToDetails(
+                            navController = navController,
+                            article = article
+                        )
+                    }
+                )
             }
         }
     }
 }
+@Composable
+fun OnBackClickStateSaver(navController: NavController) {
+    BackHandler(true) {
+        navigateToTab(
+            navController = navController,
+            route = Route.HomeScreen.route
+        )
+    }
+}
 
 //on back click it move to bak screen unless of close app
-private fun navigateToTop(navController: NavController, route: String) {
+private fun navigateToTab(navController: NavController, route: String) {
     navController.navigate(route) {
         navController.graph.startDestinationRoute?.let { homeScreen ->
             popUpTo(homeScreen) {
