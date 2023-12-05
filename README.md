@@ -10,6 +10,8 @@
 <img src="Screenshots/3.jpg" alt="drawing" width="250"/>
 </p>
 
+## Description
+
 It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
 
 ## Tech Stack Used
