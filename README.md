@@ -1,13 +1,22 @@
+# NewsBreeze Android App
+
 <p align="center"><img src="https://socialify.git.ci/sourabhkumar47/NewsBreeze/image?description=1&amp;descriptionEditable=NewsBreeze%20is%20a%20dynamic%20and%20user-friendly%20news%20application%20developed%20for%20the%20Android%20platform%20using%20Kotlin%20and%20Jetpack%20Compose.&amp;font=Inter&amp;language=1&amp;name=1&amp;pattern=Circuit%20Board&amp;theme=Light" alt="project-image"></p>
 
 <h2>Project Screenshots:</h2>
 
-<img src="Screenshots/1.jpg" alt="project-screenshot" width="400" height="400/">
+<img width="716" alt="project-screenshot" src="Screenshots/1.jpg"><br>
 
-<img src="Screenshots/2.jpg" alt="project-screenshot" width="400" height="400/">
+<img width="716" alt="project-screenshot" src="Screenshots/2.jpg"><br>
 
-<img src="Screenshots/3.jpg" alt="project-screenshot" width="400" height="400/">
-# NewsBreeze Android App
+<img width="716" alt="project-screenshot" src="Screenshots/3.jpg><br>
+
+
+[//]: # (<img src="Screenshots/1.jpg" alt="project-screenshot" width="400" height="400/">)
+
+[//]: # (<img src="Screenshots/2.jpg" alt="project-screenshot" width="400" height="400/">)
+
+[//]: # (<img src="Screenshots/3.jpg" alt="project-screenshot" width="400" height="400/">)
+
 
 It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
 
