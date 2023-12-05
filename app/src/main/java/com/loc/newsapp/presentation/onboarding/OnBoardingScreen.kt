@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.unit.dp
 import com.loc.newsapp.presentation.common.NewsButton
 import com.loc.newsapp.presentation.common.NewsTextButton
@@ -25,8 +26,8 @@ import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding2
 import com.loc.newsapp.presentation.onboarding.Dimens.PageIndicatorWidth
 import com.loc.newsapp.presentation.onboarding.components.OnboardingPage
 import com.loc.newsapp.presentation.onboarding.components.PageIndicator
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import kotlin.math.abs
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -60,6 +61,18 @@ fun OnBoardingScreen(
         HorizontalPager(state = pagerState) { index ->
             OnboardingPage(page = pages[index])
         }
+
+//        HorizontalPager(
+//            state = pagerState,
+//            modifier = Modifier.graphicsLayer {
+//                // Use the current page to create a fade in/out animation
+//                alpha = 1f - abs(pagerState.currentPage)
+//                // Use the current page to create a slide in/out animation
+//                translationX = 500f * pagerState.currentPage
+//            }
+//        ) { index ->
+//            OnboardingPage(page = pages[index])
+//        }
 
         Spacer(modifier = Modifier.weight(1f))
 
