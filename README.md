@@ -2,21 +2,13 @@
 
 <p align="center"><img src="https://socialify.git.ci/sourabhkumar47/NewsBreeze/image?description=1&amp;descriptionEditable=NewsBreeze%20is%20a%20dynamic%20and%20user-friendly%20news%20application%20developed%20for%20the%20Android%20platform%20using%20Kotlin%20and%20Jetpack%20Compose.&amp;font=Inter&amp;language=1&amp;name=1&amp;pattern=Circuit%20Board&amp;theme=Light" alt="project-image"></p>
 
-<h2>Project Screenshots:</h2>
+## Screenshots
 
-<img width="716" alt="project-screenshot" src="Screenshots/1.jpg"><br>
-
-<img width="716" alt="project-screenshot" src="Screenshots/2.jpg"><br>
-
-<img width="716" alt="project-screenshot" src="Screenshots/3.jpg><br>
-
-
-[//]: # (<img src="Screenshots/1.jpg" alt="project-screenshot" width="400" height="400/">)
-
-[//]: # (<img src="Screenshots/2.jpg" alt="project-screenshot" width="400" height="400/">)
-
-[//]: # (<img src="Screenshots/3.jpg" alt="project-screenshot" width="400" height="400/">)
-
+<p align="left">
+<img src="Screenshots/1.jpg" alt="drawing" width="250"/>
+<img src="Screenshots/2.jpg" alt="drawing" width="250"/>
+<img src="Screenshots/3.jpg" alt="drawing" width="250"/>
+</p>
 
 It provides users with up-to-the-minute news from various sources, powered by the Newsapi.org API. The app is designed to offer a seamless and engaging experience, making it easy for users to stay informed about the latest events.
 
@@ -30,23 +22,6 @@ It provides users with up-to-the-minute news from various sources, powered by th
 - **Design Language:** Material Design principles
 - **API:** Newsapi.org
 
-
-[//]: # (# Preview )
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/0ba957e5-8b70-42d6-ab09-2cf38ba3936e"><br>)
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/6dda119b-1b3f-4637-91a4-314b85eda214"><br>)
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/6e7186fa-9c05-4705-b568-8326cc99c17f"><br>)
-
-[//]: # (<br>)
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/90385dcf-a852-47c2-be23-aa243adb12e8"><br>)
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/63e8be30-6de8-4060-9ce2-0fa5000c95b8"><br>)
-
-[//]: # (<img width="716" alt="Screenshot 2023-08-23 at 4 11 00 PM" src="https://github.com/mohammednawas8/NewsApp/assets/78867217/0382d92a-e965-4bb3-a1f4-d82c0da87f94"><br>)
-[//]: # (<br><br>)
 
 ## How to Contribute
 
@@ -80,6 +55,6 @@ We welcome contributions to enhance and improve NewsBreeze. If you're interested
 
 ## Code of Conduct
 
-Please note that NewsBreeze follows a [Code of Conduct](link-to-code-of-conduct) to ensure a positive and inclusive community. Make sure to adhere to it in all interactions.
+Please note that NewsBreeze follows a [Code of Conduct] to ensure a positive and inclusive community. Make sure to adhere to it in all interactions.
 
 Feel free to reach out if you have any questions or need assistance. Happy contributing!
