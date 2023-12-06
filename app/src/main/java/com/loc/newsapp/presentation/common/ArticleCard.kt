@@ -2,6 +2,7 @@ package com.loc.newsapp.presentation.common
 
 import android.content.DialogInterface.OnClickListener
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -44,14 +45,26 @@ fun ArticleCard(
 
     Row(modifier = modifier.clickable { onClick?.invoke() }) {
 
-        AsyncImage(
-            modifier = Modifier
-                .size(ArticleCardSize)
-                .clip(MaterialTheme.shapes.medium),
-            contentScale = ContentScale.Crop,
-            model = ImageRequest.Builder(context).data(article.urlToImage).build(),
-            contentDescription = null
-        )
+
+        if (article.urlToImage != null && article.urlToImage.isNotEmpty()) {
+            AsyncImage(
+                modifier = Modifier
+                    .size(ArticleCardSize)
+                    .clip(MaterialTheme.shapes.medium),
+                contentScale = ContentScale.Crop,
+                model = ImageRequest.Builder(context).data(article.urlToImage).build(),
+                contentDescription = null
+            )
+        } else {
+            Image(
+                painter = painterResource(id = R.drawable.image_not_found),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(ArticleCardSize)
+                    .clip(MaterialTheme.shapes.medium)
+            )
+        }
+
 
         Column(
             verticalArrangement = Arrangement.SpaceAround,
