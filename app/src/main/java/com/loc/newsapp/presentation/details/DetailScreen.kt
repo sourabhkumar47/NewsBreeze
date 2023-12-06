@@ -34,7 +34,14 @@ import com.loc.newsapp.presentation.onboarding.Dimens.ArticleImageHeight
 import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding0
 import com.loc.newsapp.presentation.onboarding.Dimens.MediumPadding1
 import com.loc.newsapp.ui.theme.NewsAppTheme
+import androidx.compose.material.DismissDirection
+import androidx.compose.material.DismissValue
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.SwipeToDismiss
+import androidx.compose.material.rememberDismissState
+import androidx.compose.material.swipeable
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DetailsScreen(
     article: Article,
@@ -43,50 +50,73 @@ fun DetailsScreen(
 ) {
     val context = LocalContext.current
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .statusBarsPadding()
-    ) {
-        DetailsTopBar(
-            onBrowsingClick = {
-                Intent(Intent.ACTION_VIEW).also {
-                    it.data = Uri.parse(article.url)
-                    if (it.resolveActivity(context.packageManager) != null) {
-                        context.startActivity(it)
-                    }
-                }
-            },
-            onShareClick = {
-                Intent(Intent.ACTION_SEND).also {
-                    it.putExtra(Intent.EXTRA_TEXT, article.url)
-                    it.type = "text/plain"
-                    if (it.resolveActivity(context.packageManager) != null)
-                        context.startActivity(it)
-                }
-            },
-            onBookmarkClick = { event(DetailsEvent.UpsertDeleteArticle(article)) },
-            onBackClick = navigateUp
-        )
 
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(MediumPadding0)
-        ) {
-            item {
-                AsyncImage(
-                    model = ImageRequest.Builder(context = context).data(article.urlToImage)
-                        .build(),
-                    contentDescription = null,
+    //Fun to swipe to dismiss this screen and navigate back to the previous screen
+    val dismissState = rememberDismissState(
+        confirmStateChange = {
+            if (it == DismissValue.DismissedToEnd || it == DismissValue.DismissedToStart) {
+                navigateUp()
+            }
+            true
+        }
+    )
+
+    SwipeToDismiss(
+        state = dismissState,
+        directions = setOf(DismissDirection.StartToEnd, DismissDirection.EndToStart),
+        background = { },
+        dismissContent = {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .statusBarsPadding()
+            ) {
+                // Your existing code...
+                Column(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .height(ArticleImageHeight)
-                        .clip(MaterialTheme.shapes.medium),
-                    contentScale = ContentScale.Crop
-                )
+                        .fillMaxSize()
+                        .statusBarsPadding()
+                ) {
+                    DetailsTopBar(
+                        onBrowsingClick = {
+                            Intent(Intent.ACTION_VIEW).also {
+                                it.data = Uri.parse(article.url)
+                                if (it.resolveActivity(context.packageManager) != null) {
+                                    context.startActivity(it)
+                                }
+                            }
+                        },
+                        onShareClick = {
+                            Intent(Intent.ACTION_SEND).also {
+                                it.putExtra(Intent.EXTRA_TEXT, article.url)
+                                it.type = "text/plain"
+                                if (it.resolveActivity(context.packageManager) != null)
+                                    context.startActivity(it)
+                            }
+                        },
+                        onBookmarkClick = { event(DetailsEvent.UpsertDeleteArticle(article)) },
+                        onBackClick = navigateUp
+                    )
 
-                Spacer(modifier = Modifier.height(MediumPadding1))
+                    LazyColumn(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(MediumPadding0)
+                    ) {
+                        item {
+                            AsyncImage(
+                                model = ImageRequest.Builder(context = context)
+                                    .data(article.urlToImage)
+                                    .build(),
+                                contentDescription = null,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(ArticleImageHeight)
+                                    .clip(MaterialTheme.shapes.medium),
+                                contentScale = ContentScale.Crop
+                            )
+
+                            Spacer(modifier = Modifier.height(MediumPadding1))
 
 //                val customTextSelectionColors = TextSelectionColors(
 //                    handleColor = Color.Green,
@@ -97,26 +127,31 @@ fun DetailsScreen(
 //                    LocalTextSelectionColors provides
 //                            customTextSelectionColors
 //                ) {
-                    SelectionContainer {
-                        Text(
-                            text = article.title,
-                            style = MaterialTheme.typography.displaySmall,
-                            color = colorResource(id = R.color.text_title)
-                        )
-                    }
+                            SelectionContainer {
+                                Text(
+                                    text = article.title,
+                                    style = MaterialTheme.typography.displaySmall,
+                                    color = colorResource(id = R.color.text_title)
+                                )
+                            }
 
-                    SelectionContainer {
-                        Text(
-                            text = article.content,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = colorResource(id = R.color.body)
-                        )
+                            SelectionContainer {
+                                Text(
+                                    text = article.content,
+                                    style = MaterialTheme.typography.bodyMedium,
+                                    color = colorResource(id = R.color.body)
+                                )
 //                    }
-                }
+                            }
 
+                        }
+                    }
+                }
             }
         }
-    }
+    )
+
+
 }
 
 @Preview(showBackground = true)

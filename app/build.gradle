@@ -8,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.loc.newsapp'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.loc.newsapp"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -107,4 +107,7 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:2.5.2"
+
+    //Swipe to navigate
+    implementation 'androidx.compose.material:material:1.6.0-beta02'
 }
