@@ -2,12 +2,14 @@ package com.loc.newsapp.presentation.details
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.selection.LocalTextSelectionColors
@@ -40,6 +42,8 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.SwipeToDismiss
 import androidx.compose.material.rememberDismissState
 import androidx.compose.material.swipeable
+import androidx.compose.ui.res.painterResource
+import com.loc.newsapp.presentation.onboarding.Dimens
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -71,7 +75,6 @@ fun DetailsScreen(
                     .fillMaxSize()
                     .statusBarsPadding()
             ) {
-                // Your existing code...
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -104,17 +107,30 @@ fun DetailsScreen(
                             .padding(MediumPadding0)
                     ) {
                         item {
-                            AsyncImage(
-                                model = ImageRequest.Builder(context = context)
-                                    .data(article.urlToImage)
-                                    .build(),
-                                contentDescription = null,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(ArticleImageHeight)
-                                    .clip(MaterialTheme.shapes.medium),
-                                contentScale = ContentScale.Crop
-                            )
+                            if (article.urlToImage != null && article.urlToImage.isNotEmpty()) {
+                                AsyncImage(
+                                    model = ImageRequest.Builder(context = context)
+                                        .data(article.urlToImage)
+                                        .build(),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(ArticleImageHeight)
+                                        .clip(MaterialTheme.shapes.medium),
+                                    contentScale = ContentScale.Crop
+                                )
+                            } else {
+                                Image(
+                                    painter = painterResource(id = R.drawable.image_not_found),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+//                                        .height(ArticleImageHeight)
+                                        .clip(MaterialTheme.shapes.medium),
+                                    contentScale = ContentScale.Crop
+                                )
+                            }
+
 
                             Spacer(modifier = Modifier.height(MediumPadding1))
 
@@ -129,7 +145,7 @@ fun DetailsScreen(
 //                ) {
                             SelectionContainer {
                                 Text(
-                                    text = article.title,
+                                    text = article.title ?: "No Title Available",
                                     style = MaterialTheme.typography.displaySmall,
                                     color = colorResource(id = R.color.text_title)
                                 )
@@ -137,7 +153,7 @@ fun DetailsScreen(
 
                             SelectionContainer {
                                 Text(
-                                    text = article.content,
+                                    text = article.content ?: "No Content Available",
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = colorResource(id = R.color.body)
                                 )
