@@ -10,11 +10,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.text.selection.LocalTextSelectionColors
+import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.foundation.text.selection.TextSelectionColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -83,17 +88,32 @@ fun DetailsScreen(
 
                 Spacer(modifier = Modifier.height(MediumPadding1))
 
-                Text(
-                    text = article.title,
-                    style = MaterialTheme.typography.displaySmall,
-                    color = colorResource(id = R.color.text_title)
-                )
+//                val customTextSelectionColors = TextSelectionColors(
+//                    handleColor = Color.Green,
+//                    backgroundColor = Color.Yellow
+//                )
 
-                Text(
-                    text = article.content,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = colorResource(id = R.color.body)
-                )
+//                CompositionLocalProvider(
+//                    LocalTextSelectionColors provides
+//                            customTextSelectionColors
+//                ) {
+                    SelectionContainer {
+                        Text(
+                            text = article.title,
+                            style = MaterialTheme.typography.displaySmall,
+                            color = colorResource(id = R.color.text_title)
+                        )
+                    }
+
+                    SelectionContainer {
+                        Text(
+                            text = article.content,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = colorResource(id = R.color.body)
+                        )
+//                    }
+                }
+
             }
         }
     }
@@ -107,8 +127,8 @@ fun DetaitsScreenPreview() {
             article = Article(
                 author = "",
                 title = "Coinbase says Apple blocked its tast app release on NFTs in Wallet",
-                description ="Coinbase says Apple blocked its tast app release on NFTs in Wallet",
-                content ="We use cookies and data to Deliver and maintain Google services Track",
+                description = "Coinbase says Apple blocked its tast app release on NFTs in Wallet",
+                content = "We use cookies and data to Deliver and maintain Google services Track",
                 publishedAt = "3252423",
                 source = Source(
                     id = "", name = "bbc",
@@ -117,7 +137,7 @@ fun DetaitsScreenPreview() {
                 urlToImage = "http"
             ),
             event = {}
-        ){
+        ) {
 
         }
     }
