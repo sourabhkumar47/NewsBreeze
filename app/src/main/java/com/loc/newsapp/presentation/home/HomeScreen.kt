@@ -39,17 +39,17 @@ fun HomeScreen(
     navigateToDetails: (Article) -> Unit
 ) {
 
-    val titles by remember {
-        derivedStateOf {
-            if (articles.itemCount > 10) {
-                articles.itemSnapshotList.items
-                    .slice(IntRange(start = 0, endInclusive = 9))
-                    .joinToString(separator = " \uD83D\uDFE5 ") { it.title }
-            } else {
-                ""
-            }
-        }
-    }
+//    val titles by remember {
+//        derivedStateOf {
+//            if (articles.itemCount > 10) {
+//                articles.itemSnapshotList.items
+//                    .slice(IntRange(start = 0, endInclusive = 9))
+//                    .joinToString(separator = " \uD83D\uDFE5 ") { it.title }
+//            } else {
+//                ""
+//            }
+//        }
+//    }
 
     Column(
         modifier = Modifier
@@ -66,7 +66,7 @@ fun HomeScreen(
                 .padding(horizontal = MediumPadding0)
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding))
+//        Spacer(modifier = Modifier.height(0.dp))
 
         SearchBar(
             modifier = Modifier
@@ -81,7 +81,7 @@ fun HomeScreen(
             }
         )
 
-        Spacer(modifier = Modifier.height(MediumPadding))
+//        Spacer(modifier = Modifier.height(20.dp))
 
 //        Text(
 //            text = titles, modifier = Modifier
@@ -91,7 +91,7 @@ fun HomeScreen(
 //            color = colorResource(id = R.color.placeholder)
 //        )
 
-        Spacer(modifier = Modifier.height(MediumPadding0))
+        Spacer(modifier = Modifier.height(10.dp))
 
         ArticlesList(
             modifier = Modifier.padding(horizontal = MediumPadding0),

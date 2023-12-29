@@ -63,7 +63,7 @@ fun DetailsTopBar(
 
             IconButton(onClick = onBrowsingClick) {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_network),
+                    painter = painterResource(id = R.drawable.baseline_open_in_new_24),
                     contentDescription = null
                 )
             }
