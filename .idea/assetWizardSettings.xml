@@ -313,7 +313,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialiconsoutlined/mic/outline_mic_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/open_in_new/baseline_open_in_new_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -324,7 +324,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="b0b3b8" />
-                            <entry key="outputName" value="outline_mic_24" />
+                            <entry key="outputName" value="baseline_open_in_new_24" />
                             <entry key="sourceFile" value="C:\Users\soura\AndroidStudioProjects\NewsBreeze" />
                           </map>
                         </option>
